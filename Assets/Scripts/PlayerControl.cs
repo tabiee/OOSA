@@ -4,71 +4,87 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public float moveSpeed = 2.0f;
+    public Transform cam;
+    public Rigidbody rb;
+    public GameObject body;
+    public Transform feet;
+    public LayerMask ground;
+
+    public float moveSpeed = 4.0f;
     public float turnSpeed = 4.0f;
+    public float sprintSpeed = 8.0f;
+    public float jumpHeight = 10.0f;
 
-    private float minTurnAngle = -90.0f;
-    private float maxTurnAngle = 90.0f;
     private float rotX;
-    private bool locked = false;
+    private float rotY;
 
-    public Camera cam;
-    public CharacterController characterController;
-    public float Gravity = 0.1f;
-    private float velocity = 0;
+    private Vector3 moveInput;
+    void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     void Update()
     {
-        MouseView();
-        CamLock();
-        Movement();
-        //KeyboardMovement();
-    }
-    void MouseView()
-    {
-        // get the mouse inputs
-        float y = Input.GetAxis("Mouse X") * turnSpeed;
-        rotX += Input.GetAxis("Mouse Y") * turnSpeed;
-        // clamp the vertical rotation
-        rotX = Mathf.Clamp(rotX, minTurnAngle, maxTurnAngle);
-        // rotate the camera
-        transform.eulerAngles = new Vector3(-rotX, transform.eulerAngles.y + y, 0);
-    }
-    //this is the first version of movement. requires RigidBody. it doesn't support custom gravity which is why I changed it
-    //keeping it here just in case
-    /*void KeyboardMovement()
-    {
-        Vector3 dir = new Vector3(0, 0, 0);
-        dir.x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Mouse X") * turnSpeed;
-        dir.z = Input.GetAxis("Vertical");
-        transform.Translate(dir * moveSpeed * Time.deltaTime);
-        transform.eulerAngles = new Vector3(-rotX, transform.eulerAngles.y + y, 0);
-    }*/
-    void CamLock()
-    {
-        //press Tab to lock your mouse in place for the tiny Game window. easier for testing & moving the camera
-        if (Input.GetKeyDown(KeyCode.Tab) && locked == false)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            locked = true;
-        }
-    }
-    void Movement()
-    {
-        // player movement - WASD, uses Character Controller component, cannot have RigidBody
-        float horizontal = Input.GetAxis("Horizontal") * moveSpeed;
-        float vertical = Input.GetAxis("Vertical") * moveSpeed;
-        characterController.Move((cam.transform.right * horizontal + cam.transform.forward * vertical) * Time.deltaTime);
+        cam.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
 
-        // Gravity
-        if (characterController.isGrounded)
+        MovePlayer();
+        TurnPlayer();
+    }
+    bool IsGrounded()
+    {
+        return Physics.CheckSphere(feet.position, 0.25f, ground);
+    }
+    private void MovePlayer()
+    {
+        //get input
+        moveInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+
+        //if shift is held = run, else = walk
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            velocity = 0;
+            Vector3 MoveVector = transform.TransformDirection(moveInput) * sprintSpeed;
+            rb.velocity = new Vector3(MoveVector.x, rb.velocity.y, MoveVector.z);
         }
         else
         {
-            velocity -= Gravity * Time.deltaTime;
-            characterController.Move(new Vector3(0, velocity, 0));
+            Vector3 MoveVector = transform.TransformDirection(moveInput) * moveSpeed;
+            rb.velocity = new Vector3(MoveVector.x, rb.velocity.y, MoveVector.z);
         }
+
+        // jumping
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        {
+            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+        }
+
+        //crouching
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            body.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
+        }
+        else
+        {
+            body.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        }
+    }
+    /*
+    private void OnCollisionEnter(Collision collision)
+    {
+        grounded = true;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        grounded = false;
+    }
+    */
+    private void TurnPlayer()
+    {
+        rotY = Input.GetAxis("Mouse X") * turnSpeed;
+        rotX += Input.GetAxis("Mouse Y") * turnSpeed;
+
+        rotX = Mathf.Clamp(rotX, -90f, 90f);
+
+        cam.transform.eulerAngles = new Vector3(-rotX, cam.transform.eulerAngles.y + rotY, 0);
+        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + rotY, 0);
     }
 }
