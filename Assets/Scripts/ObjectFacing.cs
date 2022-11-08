@@ -9,7 +9,6 @@ public class ObjectFacing : MonoBehaviour
     public GameObject turningObject;
     void Update()
     {
-        Debug.Log(playerNearby);
         if (playerNearby == true)
         {
             //cheap but instant turns

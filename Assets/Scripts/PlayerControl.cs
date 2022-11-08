@@ -13,7 +13,13 @@ public class PlayerControl : MonoBehaviour
     public float moveSpeed = 4.0f;
     public float turnSpeed = 4.0f;
     public float sprintSpeed = 8.0f;
+    public float sprintCooldown = 5.0f;
     public float jumpHeight = 10.0f;
+    public int crouchModifier = 2;
+
+    private int crouchSpeed = 1;
+    private int sprintDuration = 500;
+    private float sprintAllowed = 0.0f;
 
     private float rotX;
     private float rotY;
@@ -27,6 +33,7 @@ public class PlayerControl : MonoBehaviour
     {
         cam.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
 
+
         MovePlayer();
         TurnPlayer();
     }
@@ -38,20 +45,31 @@ public class PlayerControl : MonoBehaviour
     {
         //get input
         moveInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        sprintDuration = Mathf.Clamp(sprintDuration, 0, 500);
 
-        //if shift is held = run, else = walk
-        if (Input.GetKey(KeyCode.LeftShift))
+        //if shift is held = run, else = walk, has duration of ~5s, cd of ~3s
+        if (Input.GetKey(KeyCode.LeftShift) && sprintDuration > 2 && Time.time > sprintAllowed)
         {
-            Vector3 MoveVector = transform.TransformDirection(moveInput) * sprintSpeed;
+            sprintDuration -= 2;
+
+            Vector3 MoveVector = transform.TransformDirection(moveInput) * sprintSpeed / crouchSpeed;
             rb.velocity = new Vector3(MoveVector.x, rb.velocity.y, MoveVector.z);
         }
         else
         {
-            Vector3 MoveVector = transform.TransformDirection(moveInput) * moveSpeed;
+            sprintDuration++;
+
+            Vector3 MoveVector = transform.TransformDirection(moveInput) * moveSpeed / crouchSpeed;
             rb.velocity = new Vector3(MoveVector.x, rb.velocity.y, MoveVector.z);
         }
 
-        // jumping
+        //sprint cd
+        if (sprintDuration <= 2)
+        {
+            sprintAllowed = Time.time + sprintCooldown;
+        }
+
+        //jumping
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
@@ -61,22 +79,14 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl))
         {
             body.transform.localScale = new Vector3(1.0f, 0.5f, 1.0f);
+            crouchSpeed = crouchModifier;
         }
         else
         {
             body.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            crouchSpeed = 1;
         }
     }
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        grounded = true;
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        grounded = false;
-    }
-    */
     private void TurnPlayer()
     {
         rotY = Input.GetAxis("Mouse X") * turnSpeed;

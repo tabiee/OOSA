@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour
 {
-    public int gravityValue = -10;
+    [Range(-20, 10)] public int gravityValue = -10;
 
     void Update()
     {
