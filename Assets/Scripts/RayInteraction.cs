@@ -6,6 +6,7 @@ public class RayInteraction : MonoBehaviour
 {
     public RaycastHit hitData;
     public LayerMask interactionLayer;
+    public LayerMask interactionLayer2;
     public bool didHit = false;
     void Update()
     {
@@ -19,6 +20,16 @@ public class RayInteraction : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 hitObject.GetComponent<Interactable>().Interact();
+            }
+        }
+        else if (Physics.Raycast(ray, out hitData, 2, interactionLayer2, QueryTriggerInteraction.Ignore))
+        {
+            didHit = true;
+            GameObject hitObject = hitData.transform.gameObject;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                hitObject.GetComponent<SoundInteractable>().Interact();
             }
         }
         else
