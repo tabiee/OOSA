@@ -8,7 +8,7 @@ public class PlayerControl : MonoBehaviour
     public Rigidbody rb;
     public GameObject body;
     public Transform feet;
-    public LayerMask ground;
+    public LayerMask notGround;
 
     public float moveSpeed = 4.0f;
     public float turnSpeed = 4.0f;
@@ -39,7 +39,7 @@ public class PlayerControl : MonoBehaviour
     }
     bool IsGrounded()
     {
-        return Physics.CheckSphere(feet.position, 0.25f, ground);
+        return Physics.CheckSphere(feet.position, 0.25f, ~notGround);
     }
     private void MovePlayer()
     {
