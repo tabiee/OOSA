@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractRay : MonoBehaviour
+public class RayInteraction : MonoBehaviour
 {
     public RaycastHit hitData;
     public LayerMask interactionLayer;
