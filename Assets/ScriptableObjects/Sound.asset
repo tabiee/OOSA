@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a2d004297043e46ac6645b082b01d5, type: 3}
   m_Name: Sound
   m_EditorClassIdentifier: 
-  panel1: 
-  panel2: Hello there
+  panel1: this was a triumph
+  panel2: im making a note here
+  panel3: huge success
+  panel4: 
+  panel5: 
   inRange: 0
