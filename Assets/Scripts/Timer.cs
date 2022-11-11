@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -55,6 +56,10 @@ public class Timer : MonoBehaviour
             //audioLocation.GetComponent<Interactable>().Repeater();
             warningText.text = "WARNING: \n Suffocation imminent";
             repeatActive = true;
+        }
+        if (timeRemaining <= 0)
+        {
+            SceneManager.LoadScene("badEnd");
         }
     }
     //cool shit but not what i wanted
