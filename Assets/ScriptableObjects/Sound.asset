@@ -17,4 +17,5 @@ MonoBehaviour:
   panel3: huge success
   panel4: 
   panel5: 
+  lineAmount: 3
   inRange: 0

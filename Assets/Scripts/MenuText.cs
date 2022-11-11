@@ -9,7 +9,7 @@ public class MenuText : MonoBehaviour
     public TMP_Text text;
     public void OnMouseDown()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("map1");
     }
     private void OnMouseEnter()
     {

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a2d004297043e46ac6645b082b01d5, type: 3}
   m_Name: Trigger
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  panel1: Ray
-  panel2: Precise
+  panel1: Trigger
+  panel2: Wide
+  panel3: 
+  panel4: 
+  panel5: 
+  lineAmount: 2
   inRange: 0
-  triggeredObject: {fileID: 0}

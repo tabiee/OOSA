@@ -6,13 +6,20 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    //the actual timer
     public float timeRemaining = 1200;
     public bool timerIsRunning = false;
 
     public GameObject audioLocation;
     public TMP_Text timeText;
+    public TMP_Text warningText;
 
     public bool repeatActive = false;
+
+    //percentage display
+    private int percentage = 100;
+    private float percCooldown = 6.0f;
+    private float percAllowed = 0.0f;
     private void Start()
     {
         //starts the timer
@@ -20,31 +27,42 @@ public class Timer : MonoBehaviour
     }
     void Update()
     {
+        timeText.text = "O² " + percentage + "%";
+
+        if (Time.time > percAllowed)
+        {
+            percAllowed = Time.time + percCooldown;
+            percentage -= 1;
+        }
+
+
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
-                DisplayTime(timeRemaining);
+                //DisplayTime(timeRemaining);
             }
             else
             {
-                Debug.Log("Time has run out!");
+                Debug.Log("Time's out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
             }
         }
         if (timeRemaining <= 600 && repeatActive == false)
         {
-            audioLocation.GetComponent<Interactable>().Repeater();
+            //audioLocation.GetComponent<Interactable>().Repeater();
+            warningText.text = "WARNING: \n Suffocation imminent";
             repeatActive = true;
         }
     }
-    void DisplayTime(float timeToDisplay)
+    //cool shit but not what i wanted
+    /*void DisplayTime(float timeToDisplay)
     {
         timeToDisplay += 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }
+    }*/
 }

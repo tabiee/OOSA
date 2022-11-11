@@ -42,10 +42,11 @@ public class Interactable : MonoBehaviour
             templateText = completionText;
         }
         Invoke("Randomizer", 0);
-        gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
         panelLines = Mathf.Clamp(panelLines, 0, 5);
 
-        Debug.Log(panelLines + " amount of lines");
+        //for testing purposes
+        //gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        //Debug.Log(panelLines + " amount of lines");
 
         //if there's lines left, do next panel
         if (panelLines > 0 || questAccepted == true)
