@@ -26,9 +26,14 @@ public class PickupObject : MonoBehaviour
             }
             else
             {
-                //drop
-                Drop();
+                //throw
+                Throw();
             }
+        }
+        if (Input.GetMouseButtonDown(0) && heldObj != null)
+        {
+            //drop
+            Drop();
         }
         if (heldObj != null)
         {
@@ -58,6 +63,16 @@ public class PickupObject : MonoBehaviour
         }
     }
     void Drop()
+    {
+        heldRB.useGravity = true;
+        heldRB.drag = 1;
+        heldRB.constraints = RigidbodyConstraints.None;
+
+        heldRB.transform.parent = null;
+        heldObj = null;
+
+    }
+    void Throw()
     {
         heldRB.useGravity = true;
         heldRB.drag = 1;

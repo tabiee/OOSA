@@ -8,10 +8,14 @@ public class Timer : MonoBehaviour
 {
     public float timeRemaining = 1200;
     public bool timerIsRunning = false;
+
+    public GameObject audioLocation;
     public TMP_Text timeText;
+
+    public bool repeatActive = false;
     private void Start()
     {
-        // Starts the timer automatically
+        //starts the timer
         timerIsRunning = true;
     }
     void Update()
@@ -29,6 +33,11 @@ public class Timer : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
             }
+        }
+        if (timeRemaining <= 600 && repeatActive == false)
+        {
+            audioLocation.GetComponent<Interactable>().Repeater();
+            repeatActive = true;
         }
     }
     void DisplayTime(float timeToDisplay)
