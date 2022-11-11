@@ -11,5 +11,6 @@ public class TemplateText : ScriptableObject
     public string panel4 = "";
     public string panel5 = "";
 
+    public int lineAmount = 2;
     public bool inRange = false;
 }
