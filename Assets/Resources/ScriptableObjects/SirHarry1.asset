@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a2d004297043e46ac6645b082b01d5, type: 3}
+  m_Name: SirHarry1
+  m_EditorClassIdentifier: 
+  panel1: "Oh? If it isn\u2019t the captain themself honoring me with their most
+    beauteous presence. How might you be in this most esteemed indeterminate time
+    of existence?"
+  panel2: I, Sir Harry Jarvis Penley Wetherby Bob Borthwick VI, am doing most splendidly.
+    Even more splendidly now that I have the luxury of beholding such a captivating
+    individual.
+  panel3: I certainly hope that you are not too overburdened by the arduous labor
+    of the captainhood.
+  panel4: Might I suggest that you take a wee respite?
+  panel5: Maybe we could marvel at the sight of your home planet Terra together for
+    a timespan of several minutes. At no time does it fail to lighten up my mood.
+  lineAmount: 5
+  inRange: 0

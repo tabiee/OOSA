@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a2d004297043e46ac6645b082b01d5, type: 3}
+  m_Name: SirHarry1Done
+  m_EditorClassIdentifier: 
+  panel1: "Marvelous! Now I can gaze into the tranquil scenery to my heart\u2019s
+    content. And it does provide the requisite amount of ambience to this deplorable
+    little ship of space."
+  panel2: Did you know that the most wonderful galaxy that I call home has two suns,
+    unlike this one? Oh how the sight still fills my mind with echoes from the foregone
+    that feels ever so distant.
+  panel3: Though, supplementarily, it does fill me with some wistfulness. It has
+    been a lengthy amount of time since I last feasted my eyes upon the magnificent
+    vista of my home.
+  panel4: The glamorous 18 moons lighting the indigo sky and the irradiant illumination
+    of our most prodigious city, Dawncaster. I have yet to behold a more splendid
+    scenery.
+  panel5: It would be my greatest pleasure to tour you around my wondrous place of
+    origin in the glorious future. It can be a date if you so wish.
+  lineAmount: 5
+  inRange: 0
