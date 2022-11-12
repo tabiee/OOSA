@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Interactable : MonoBehaviour
+public class Quest3 : MonoBehaviour
 {
-    //script that was used for testing purposes & brainstorming
-
     [Header("Text Settings")]
     public TMP_Text textBox;
     public TemplateText templateText;
@@ -16,20 +14,35 @@ public class Interactable : MonoBehaviour
     private bool questAccepted = false;
     private bool questCompleted = false;
 
-    /*
     [Header("Audio Settings")]
     public AudioSource randomSound;
     public AudioClip[] audioSources;
-    */
     private void Awake()
     {
+        textBox = GetComponentInChildren<TMP_Text>();
+        var loadTemplateText = Resources.Load<TemplateText>("ScriptableObjects/Quest3");
+        var loadCompletionText = Resources.Load<TemplateText>("ScriptableObjects/Quest3Done");
+
+        randomSound = GetComponentInChildren<AudioSource>();
+        var loadAudioSources = Resources.LoadAll<AudioClip>("Audio/");
+
+        templateText = loadTemplateText;
+        completionText = loadCompletionText;
+        audioSources = loadAudioSources;
+
         panelLines = templateText.lineAmount;
+
+        Debug.Log("Quest3 was added!");
     }
     public void CompleteQuest()
     {
+        //if the quest is done, change the text
+        Debug.Log("Quest3 was completed!");
+        templateText = completionText;
         questCompleted = true;
+        questAccepted = false;
+        panelLines = templateText.lineAmount;
     }
-    /*
     public void Repeater()
     {
         InvokeRepeating("Randomizer", 0.0f, 6.0f);
@@ -38,20 +51,16 @@ public class Interactable : MonoBehaviour
     {
         randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
         randomSound.Play();
-    }*/
+    }
     public void Interact()
     {
-        //if the quest is done, change the text
-        if (questCompleted == true)
-        {
-            templateText = completionText;
-        }
-        //Invoke("Randomizer", 0);
+        Debug.Log("Quest1 was interacted with!");
+        Invoke("Randomizer", 0);
         panelLines = Mathf.Clamp(panelLines, 0, 5);
 
-        //randomize color
-        gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-        Debug.Log(panelLines + " amount of lines");
+        //for testing purposes
+        //gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        Debug.Log("Quest3 - Line amount is: " + panelLines);
 
         //if there's lines left, do next panel
         if (panelLines > 0 || questAccepted == true)
@@ -92,14 +101,20 @@ public class Interactable : MonoBehaviour
                 textBox.text = "";
             }
         }
-        //if out of text, give quest
+        //if out of text, give quest. if quest done, give next quest and remove this one
         else
         {
-            if (questAccepted == false)
+            if (questAccepted == false && questCompleted == false)
             {
                 questAccepted = true;
                 textBox.text = "";
                 //GetComponent<Quest>().Accept();
+            }
+            else
+            {
+                textBox.text = "";
+                //gameObject.AddComponent<Quest2>();
+                //Destroy(GetComponent<Quest1>());
             }
         }
     }

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 787f46533be9ec64689c5502795e2f9a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - textBox: {instanceID: 0}
+  - templateText: {fileID: 11400000, guid: 4a3ef18983c42444fbbb75055aa1a112, type: 2}
+  - completionText: {fileID: 11400000, guid: c78c8029e971b9840a2fb292443d98a0, type: 2}
+  - randomSound: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

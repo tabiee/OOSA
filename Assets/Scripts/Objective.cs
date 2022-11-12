@@ -13,8 +13,16 @@ public class Objective : MonoBehaviour
         if (other.gameObject.tag == "Objective")
         {
             Destroy(other.gameObject);
-            alien.GetComponent<Interactable>().CompleteQuest();
             alien.GetComponent<MeshRenderer>().material = sprite;
+
+            if (alien.GetComponent<Quest1>())
+            {
+                alien.GetComponent<Quest1>().CompleteQuest();
+            }
+            else if (alien.GetComponent<Interactable>())
+            {
+                alien.GetComponent<Interactable>().CompleteQuest();
+            }
         }
     }
 }

@@ -7,19 +7,17 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    //the actual timer
     public float timeRemaining = 1200;
-    public bool timerIsRunning = false;
+    public float percCooldown = 6.0f;
 
     public GameObject audioLocation;
     public TMP_Text timeText;
     public TMP_Text warningText;
 
+    public bool timerIsRunning = false;
     public bool repeatActive = false;
 
-    //percentage display
     private int percentage = 100;
-    private float percCooldown = 6.0f;
     private float percAllowed = 0.0f;
     private void Start()
     {
@@ -49,6 +47,7 @@ public class Timer : MonoBehaviour
                 Debug.Log("Time's out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
+                SceneManager.LoadScene("badEnd");
             }
         }
         if (timeRemaining <= 600 && repeatActive == false)
@@ -56,10 +55,6 @@ public class Timer : MonoBehaviour
             //audioLocation.GetComponent<Interactable>().Repeater();
             warningText.text = "WARNING: \n Suffocation imminent";
             repeatActive = true;
-        }
-        if (timeRemaining <= 0)
-        {
-            SceneManager.LoadScene("badEnd");
         }
     }
     //cool shit but not what i wanted

@@ -20,11 +20,20 @@ public class RayInteraction : MonoBehaviour
         {
             GameObject hitObject = hitData.transform.gameObject;
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<Quest1>())
+            {
+                hitObject.GetComponent<Quest1>().Interact();
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<Quest2>())
+            {
+                hitObject.GetComponent<Quest2>().Interact();
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
             {
                 hitObject.GetComponent<Interactable>().Interact();
             }
         }
+
         // test the sound button
         else if (Physics.Raycast(ray, out hitData, pickupRange, interactionLayer2, QueryTriggerInteraction.Ignore))
         {

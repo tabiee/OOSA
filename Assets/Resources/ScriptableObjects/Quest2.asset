@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5a2d004297043e46ac6645b082b01d5, type: 3}
-  m_Name: Alien
+  m_Name: Quest2
   m_EditorClassIdentifier: 
-  panel1: yes hi
-  panel2: whats up
-  panel3: gimme a moustache
-  panel4: 
-  panel5: 
-  lineAmount: 3
+  panel1: dude whut
+  panel2: i look sick now
+  panel3: hell ye
+  panel4: actually i cant see
+  panel5: can u open the blinds
+  lineAmount: 5
   inRange: 0

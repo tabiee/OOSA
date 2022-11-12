@@ -3832,5 +3832,13 @@ PrefabInstance:
       propertyPath: playerTarget
       value: 
       objectReference: {fileID: 1260958839}
+    - target: {fileID: 4188190858561513839, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
+      propertyPath: templateText
+      value: 
+      objectReference: {fileID: 11400000, guid: b14ee53fdd3949e4aad05a5819be6d8e, type: 2}
+    - target: {fileID: 4188190858561513839, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
+      propertyPath: completionText
+      value: 
+      objectReference: {fileID: 11400000, guid: db8c214b253027a49a5637138ddd6e7a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
