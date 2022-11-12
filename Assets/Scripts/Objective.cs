@@ -5,7 +5,6 @@ using UnityEngine;
 public class Objective : MonoBehaviour
 {
     public GameObject alien;
-
     public Material sprite;
     private void OnTriggerEnter(Collider other)
     {
@@ -15,9 +14,9 @@ public class Objective : MonoBehaviour
             Destroy(other.gameObject);
             alien.GetComponent<MeshRenderer>().material = sprite;
 
-            if (alien.GetComponent<Quest1>())
+            if (alien.GetComponent<HarryQuest2>())
             {
-                alien.GetComponent<Quest1>().CompleteQuest();
+                alien.GetComponent<HarryQuest2>().CompleteQuest();
             }
             else if (alien.GetComponent<Interactable>())
             {

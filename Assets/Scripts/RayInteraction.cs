@@ -20,13 +20,17 @@ public class RayInteraction : MonoBehaviour
         {
             GameObject hitObject = hitData.transform.gameObject;
 
-            if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<Quest1>())
+            if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<HarryQuest1>())
             {
-                hitObject.GetComponent<Quest1>().Interact();
+                hitObject.GetComponent<HarryQuest1>().Interact();
             }
-            else if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<Quest2>())
+            else if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<HarryQuest2>())
             {
-                hitObject.GetComponent<Quest2>().Interact();
+                hitObject.GetComponent<HarryQuest2>().Interact();
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<HarryQuest3>())
+            {
+                hitObject.GetComponent<HarryQuest3>().Interact();
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
