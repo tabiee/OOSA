@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a2d004297043e46ac6645b082b01d5, type: 3}
   m_Name: SirHarry2Done
   m_EditorClassIdentifier: 
-  panel1: Yes yes! Most splendid. This mustache is unsurpassable!
-  panel2: I knew that only someone as fanciable as you could come up with something
-    so elegant. I offer you my sincerest and deepest gratitude.
-  panel3: 
-  panel4: 
-  panel5: 
-  lineAmount: 2
+  panel1: Yes yes! Most splendid. This moustache is unsurpassable! I knew that only
+    someone as fanciable as you could come up with something so elegant.
+  panel2: 'I, Sir Harry Jarvis Penley Wetherby Bob Borthwick VI, offer you my sincerest
+    and deepest gratitude. With this pulchritudinous moustache my complexion is complete. '
+  panel3: 'Never have I beheld anything so divine, though a certain Terran does come
+    as an extremely close second. '
+  panel4: 'Mayhaps you should attempt wearing this moustache? '
+  panel5: "Or to think of it, perchance it\u2019s better not to. Such exquisiteness
+    might just be too much to handle."
+  lineAmount: 5
   inRange: 0

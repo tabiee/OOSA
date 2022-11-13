@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a2d004297043e46ac6645b082b01d5, type: 3}
+  m_Name: SirHarry2
+  m_EditorClassIdentifier: 
+  panel1: My dearest captain, you are from the verdant planet of Terra, are you not?
+    I, Sir Harry Jarvis Penley Wetherby Bob Borthwick VI, do find Terra to be a highly
+    likeable sphere to exist on.
+  panel2: 'And highly likeable are the homines sapientes originating from there too.
+    You, of course, being the beau ideal of all. '
+  panel3: 'I have yet to journey to Terra myself but I have read a considerable amount
+    of literature about your charming little planet. '
+  panel4: 'When I ultimately plan a sojourn there, it would be most pleasant if you
+    were to accompany me. But first I surely ought to look the part. '
+  panel5: "I\u2019ve conceived that, regrettably, earthlings aren\u2019t always the
+    most hospitable towards distinguished beings from outer space, such as myself.
+    Hmm, what might aid me in blending in just perfectly?"
+  lineAmount: 5
+  inRange: 0
