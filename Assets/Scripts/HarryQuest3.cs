@@ -13,8 +13,8 @@ public class HarryQuest3 : MonoBehaviour
     public TemplateText completionText;
 
     private int panelLines;
-    private bool questAccepted = false;
-    private bool questCompleted = false;
+    public bool questAccepted = false;
+    public bool questCompleted = false;
 
     [Header("Audio Settings")]
     public AudioSource randomSound;
@@ -22,11 +22,11 @@ public class HarryQuest3 : MonoBehaviour
     private void Awake()
     {
         textBox = GetComponentInChildren<TMP_Text>();
-        var loadTemplateText = Resources.Load<TemplateText>("ScriptableObjects/HarryQuest3");
-        var loadCompletionText = Resources.Load<TemplateText>("ScriptableObjects/HarryQuest3Done");
+        var loadTemplateText = Resources.Load<TemplateText>("ScriptableObjects/SirHarry3");
+        var loadCompletionText = Resources.Load<TemplateText>("ScriptableObjects/SirHarry3Done");
 
         randomSound = GetComponentInChildren<AudioSource>();
-        var loadAudioSources = Resources.LoadAll<AudioClip>("Audio/");
+        var loadAudioSources = Resources.LoadAll<AudioClip>("Audio/HarryQuest1/");
 
         templateText = loadTemplateText;
         completionText = loadCompletionText;
@@ -44,6 +44,7 @@ public class HarryQuest3 : MonoBehaviour
         questCompleted = true;
         questAccepted = false;
         panelLines = templateText.lineAmount;
+
     }
     public void Repeater()
     {
@@ -56,7 +57,7 @@ public class HarryQuest3 : MonoBehaviour
     }
     public void Interact()
     {
-        Debug.Log("Quest1 was interacted with!");
+        Debug.Log("HarryQuest3 was interacted with!");
         Invoke("Randomizer", 0);
         panelLines = Mathf.Clamp(panelLines, 0, 5);
 
@@ -115,6 +116,7 @@ public class HarryQuest3 : MonoBehaviour
             }
             else
             {
+                Debug.Log("HarryQuest3 ending actived!");
                 SceneManager.LoadScene("GoodEnd");
             }
         }

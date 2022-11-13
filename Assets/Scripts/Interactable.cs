@@ -16,20 +16,30 @@ public class Interactable : MonoBehaviour
     private bool questAccepted = false;
     private bool questCompleted = false;
 
-    /*
     [Header("Audio Settings")]
     public AudioSource randomSound;
     public AudioClip[] audioSources;
-    */
+
     private void Awake()
     {
         panelLines = templateText.lineAmount;
+
+        if (gameObject.name == "Cardboard2")
+        {
+            var loadAudioSources = Resources.LoadAll<AudioClip>("Audio/Alien2");
+            audioSources = loadAudioSources;
+        }
+        else if (gameObject.name == "Cardboard3")
+        {
+            var loadAudioSources = Resources.LoadAll<AudioClip>("Audio/Alien3");
+            audioSources = loadAudioSources;
+        }
     }
     public void CompleteQuest()
     {
         questCompleted = true;
     }
-    /*
+
     public void Repeater()
     {
         InvokeRepeating("Randomizer", 0.0f, 6.0f);
@@ -38,7 +48,7 @@ public class Interactable : MonoBehaviour
     {
         randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
         randomSound.Play();
-    }*/
+    }
     public void Interact()
     {
         //if the quest is done, change the text
@@ -50,7 +60,7 @@ public class Interactable : MonoBehaviour
         panelLines = Mathf.Clamp(panelLines, 0, 5);
 
         //randomize color
-        gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        //gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
         Debug.Log(panelLines + " amount of lines");
 
         //if there's lines left, do next panel

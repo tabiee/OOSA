@@ -21,11 +21,11 @@ public class HarryQuest1 : MonoBehaviour
     private void Awake()
     {
         textBox = GetComponentInChildren<TMP_Text>();
-        var loadTemplateText = Resources.Load<TemplateText>("ScriptableObjects/Quest2");
-        var loadCompletionText = Resources.Load<TemplateText>("ScriptableObjects/Quest2Done");
+        var loadTemplateText = Resources.Load<TemplateText>("ScriptableObjects/SirHarry1");
+        var loadCompletionText = Resources.Load<TemplateText>("ScriptableObjects/SirHarry1Done");
 
         randomSound = GetComponentInChildren<AudioSource>();
-        var loadAudioSources = Resources.LoadAll<AudioClip>("Audio/");
+        var loadAudioSources = Resources.LoadAll<AudioClip>("Audio/HarryQuest1/");
 
         templateText = loadTemplateText;
         completionText = loadCompletionText;

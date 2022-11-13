@@ -3,46 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GravityButton : MonoBehaviour
-
-
 {
     public GameObject triggeredObject;
-    public bool gravitySwitchNo;
-    public bool gravitySwitchSpicy;
-    public GameObject gravityButtNo;
-    public GameObject gravityButtSpicy;
-    
+    public bool playerNearby = false;
 
+    //public bool gravitySwitchNo;
+    //public bool gravitySwitchSpicy;
+    //public GameObject gravityButtNo;
+    //public GameObject gravityButtSpicy;
 
     private void Update()
     {
         GameObject Player = GameObject.Find("Player");
         Gravity painovoima = Player.GetComponent<Gravity>();
 
-        if (gravitySwitchNo && gravitySwitchSpicy == true)
-        { 
-            painovoima.gravityValue = -10;
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.Q))
+        /*if (gravitySwitchNo && gravitySwitchSpicy == true)
         {
-            
-            gravitySwitchNo = !gravitySwitchNo;
+            painovoima.gravityValue = -10;
+        }*/
 
-            if (gravitySwitchNo)
+
+        if (Input.GetKeyDown(KeyCode.E) && playerNearby == true)
+        {
+            //gravitySwitchNo = !gravitySwitchNo;
+            if (triggeredObject.gameObject.name == "gravityButtNo")
             {
-                gravityButtNo.GetComponent<Renderer>().material.color = Color.green;
-                painovoima.gravityValue += 10;
+                triggeredObject.GetComponent<Renderer>().material.color = Color.green;
+                painovoima.gravityValue += 2;
+                Invoke("ResetColor", 0.5f);
             }
-            else if (!gravitySwitchNo)
+            else if (triggeredObject.gameObject.name == "gravityButtSpicy")
             {
-                gravityButtNo.GetComponent<Renderer>().material.color = Color.red;
-                painovoima.gravityValue = -10; 
+                triggeredObject.GetComponent<Renderer>().material.color = Color.blue;
+                painovoima.gravityValue -= 2;
+                Invoke("ResetColor", 0.5f);
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.R))
+        /*
+        if (Input.GetKeyDown(KeyCode.E))
         {
 
             gravitySwitchSpicy = !gravitySwitchSpicy;
@@ -58,12 +56,24 @@ public class GravityButton : MonoBehaviour
                 painovoima.gravityValue = -10;
             }
         }
-
+        */
+    }
+    public void ResetColor()
+    {
+        triggeredObject.GetComponent<Renderer>().material.color = Color.red;
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerNearby = true;
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerNearby = false;
+        }
     }
 }
-
-
-
-
-
-        
