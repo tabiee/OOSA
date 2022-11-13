@@ -10,7 +10,7 @@ public class Randomize : MonoBehaviour
     public void Awake()
     {
         //loads all audioclips in the folder Audio (regardless of what subfolder they are in)
-        var loadAudioSources = Resources.LoadAll<AudioClip>("Audio/Whispers/");
+        var loadAudioSources = Resources.LoadAll<AudioClip>("Audio/");
         audioSources = loadAudioSources;
     }
     public void PlaySound()
@@ -25,6 +25,6 @@ public class Randomize : MonoBehaviour
     }
     public void Repeater()
     {
-        InvokeRepeating("Randomizer", 0.0f, 10.0f);
+        InvokeRepeating("Randomizer", 0.0f, 6.0f);
     }
 }
