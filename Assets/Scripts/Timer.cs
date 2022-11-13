@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     public float timeRemaining = 1200;
+    public float timeHalf = 600;
     public float percCooldown = 6.0f;
 
     public GameObject audioLocation;
@@ -50,9 +51,9 @@ public class Timer : MonoBehaviour
                 SceneManager.LoadScene("badEnd");
             }
         }
-        if (timeRemaining <= 600 && repeatActive == false)
+        if (timeRemaining <= timeHalf && repeatActive == false)
         {
-            //audioLocation.GetComponent<Interactable>().Repeater();
+            audioLocation.GetComponent<Randomize>().Repeater();
             warningText.text = "WARNING: \n Suffocation imminent";
             repeatActive = true;
         }

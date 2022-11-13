@@ -17,24 +17,24 @@ public class KillBlinds : MonoBehaviour
         if (sendToMoon == true)
         {
             triggeredObject.transform.Translate(0, 0.03f, 0);
-            Invoke("DestroyIt", 3);
+            Invoke("DestroyIt", 2);
         }
     }
     public void DestroyIt()
     {
         Destroy(triggeredObject);
-        alien.GetComponent<Quest2>().CompleteQuest();
+        alien.GetComponent<HarryQuest1>().CompleteQuest();
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && alien.GetComponent<Quest2>())
+        if (other.CompareTag("Player") && alien.GetComponent<HarryQuest1>())
         {
             playerNearby = true;
         }
     }
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && alien.GetComponent<Quest2>())
+        if (other.CompareTag("Player") && alien.GetComponent<HarryQuest1>())
         {
             playerNearby = false;
         }
