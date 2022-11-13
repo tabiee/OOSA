@@ -1644,6 +1644,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 410498, guid: 104703105626daa4f8b3f24af487d01d, type: 3}
   m_PrefabInstance: {fileID: 1611785398}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &83305758 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4188190857648330871, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
+  m_PrefabInstance: {fileID: 1300741787}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &87151034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13327,7 +13332,7 @@ MonoBehaviour:
   textBox: {fileID: 1333775889}
   templateText: {fileID: 11400000, guid: 2f590f99b2cad2c4d819a46e57a9a830, type: 2}
   completionText: {fileID: 11400000, guid: 4caa548fcfce6da49afce0f302b8af44, type: 2}
-  randomSound: {fileID: 0}
+  randomSound: {fileID: 83305758}
   audioSources: []
 --- !u!4 &765183748 stripped
 Transform:
