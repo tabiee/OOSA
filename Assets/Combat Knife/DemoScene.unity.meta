@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Combat Knife/DemoScene.unity.meta
 guid: 51f98dc3996d7154e9326a25588d9e57
+========
+guid: dbf21acab32c98742bd928ac1972f1b1
+folderAsset: yes
+>>>>>>>> d9472b44b5d19e6154dcb5c8f3e7cac776b53699:Assets/Resources/Audio/Whispers.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
