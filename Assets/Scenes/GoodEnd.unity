@@ -395,13 +395,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 7f64fe5db5f1d20419563f668c894a41, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1518762152}
+        m_TargetAssemblyTypeName: GoodEnd, Assembly-CSharp
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 1754349516}
   - component: {fileID: 1754349515}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: die happy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 1838370978}
   - component: {fileID: 1838370977}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: love found
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

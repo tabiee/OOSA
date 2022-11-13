@@ -10,7 +10,7 @@ public class GoodEnd : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
     }
     
-    public void MainMenu()
+    public void ReturnButton()
     {
         SceneManager.LoadScene("main menu");
     }
