@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SizeChanger : MonoBehaviour
 {
-<<<<<<< Updated upstream:Assets/Scripts/SizeChanger.cs
-    public bool playerNearby;
-=======
     public GameObject triggeredObject;
     public Transform player;
     public Transform playerBody;
@@ -21,12 +19,23 @@ public class SizeChanger : MonoBehaviour
     {
         scaleChange = new Vector3(0.2f, 0.2f, 0.2f);
     }
->>>>>>> Stashed changes:Assets/Scripts/Lilith/SizeChanger.cs
     void Update()
     {
+        if (playerNearby == true && Input.GetKeyDown(KeyCode.E))
+        {
+            if (triggeredObject.gameObject.name == "sizeUp")
+            {
+                triggeredObject.GetComponent<Renderer>().material.color = Color.red;
+                player.transform.localScale += scaleChange;
+                playerBody.transform.position = new Vector3(-8.3813f, 0.8991978f, -3.086281f);
+                Invoke("ResetColor", 0.5f);
+            }
+            else if (triggeredObject.gameObject.name == "sizeDown")
+            {
+                triggeredObject.GetComponent<Renderer>().material.color = Color.red;
+                player.transform.localScale -= scaleChange;
+                playerBody.transform.position = new Vector3(-8.3813f, 0.8991978f, -0.05828547f);
 
-<<<<<<< Updated upstream:Assets/Scripts/SizeChanger.cs
-=======
                 Invoke("ResetColor", 0.5f);
             }
         }
@@ -41,7 +50,6 @@ public class SizeChanger : MonoBehaviour
     public void ResetColor()
     {
         triggeredObject.GetComponent<Renderer>().material.color = Color.cyan;
->>>>>>> Stashed changes:Assets/Scripts/Lilith/SizeChanger.cs
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -57,5 +65,4 @@ public class SizeChanger : MonoBehaviour
             playerNearby = false;
         }
     }
-
 }

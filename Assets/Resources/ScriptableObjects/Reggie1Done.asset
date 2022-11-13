@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a2d004297043e46ac6645b082b01d5, type: 3}
+  m_Name: Reggie1Done
+  m_EditorClassIdentifier: 
+  panel1: O-oh?
+  panel2: "You like plants too? That\u2019s.. nice."
+  panel3: "They\u2019re my best friends."
+  panel4: "This one\u2019s called Uopijhujkh and this is Wquhg."
+  panel5: Thank you for returning them to me.
+  lineAmount: 5
+  inRange: 0
