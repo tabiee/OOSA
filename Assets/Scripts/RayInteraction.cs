@@ -32,6 +32,30 @@ public class RayInteraction : MonoBehaviour
             {
                 hitObject.GetComponent<HarryQuest3>().Interact();
             }
+            else if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<LilithQuest1>())
+            {
+                hitObject.GetComponent<LilithQuest1>().Interact();
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<LilithQuest2>())
+            {
+                hitObject.GetComponent<LilithQuest2>().Interact();
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<LilithQuest3>())
+            {
+                hitObject.GetComponent<LilithQuest3>().Interact();
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<ReggyQuest1>())
+            {
+                hitObject.GetComponent<ReggyQuest1>().Interact();
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<ReggyQuest2>())
+            {
+                hitObject.GetComponent<ReggyQuest2>().Interact();
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && hitObject.GetComponent<ReggyQuest3>())
+            {
+                hitObject.GetComponent<ReggyQuest3>().Interact();
+            }
             else if (Input.GetKeyDown(KeyCode.E))
             {
                 hitObject.GetComponent<Interactable>().Interact();
