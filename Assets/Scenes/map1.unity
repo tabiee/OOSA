@@ -19164,6 +19164,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: alientext3
       objectReference: {fileID: 0}
+    - target: {fileID: 4188190858048773174, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188190858048773174, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188190858048773174, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4188190858048773175, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
       propertyPath: m_SizeDelta.x
       value: 40
@@ -23287,6 +23299,18 @@ PrefabInstance:
     - target: {fileID: 4188190858048773172, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
       propertyPath: m_Name
       value: alientext2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188190858048773174, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
+      propertyPath: m_fontSize
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188190858048773174, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188190858048773174, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4188190858048773175, guid: 1ccc0ee29a9023549a3d0dd5bd3e0f4e, type: 3}
       propertyPath: m_SizeDelta.x
