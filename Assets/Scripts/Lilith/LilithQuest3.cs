@@ -11,6 +11,7 @@ public class LilithQuest3 : MonoBehaviour
     public TMP_Text textBox;
     public TemplateText templateText;
     public TemplateText completionText;
+    //public GameObject[] explode;
 
     public int panelLines;
     public bool questAccepted = false;
@@ -22,6 +23,9 @@ public class LilithQuest3 : MonoBehaviour
     private void Awake()
     {
         textBox = GetComponentInChildren<TMP_Text>();
+        //explode = GameObject.FindGameObjectsWithTag("explodetrigger");
+
+
         var loadTemplateText = Resources.Load<TemplateText>("ScriptableObjects/LilShit3");
         var loadCompletionText = Resources.Load<TemplateText>("ScriptableObjects/LilShit3Done");
 
@@ -110,6 +114,8 @@ public class LilithQuest3 : MonoBehaviour
         {
             if (questAccepted == false && questCompleted == false)
             {
+                //explode.gameObject.SetActive(true);
+                //GameObject.Find("explodetrigger").SetActive(true);
                 Debug.Log("LilithQuest3 was accepted!");
                 questAccepted = true;
                 textBox.text = "";

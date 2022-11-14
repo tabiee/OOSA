@@ -16,22 +16,29 @@ public class Explode : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && alien.GetComponent<LilithQuest3>().questAccepted == true)
+        if (alien.GetComponent<LilithQuest3>())
         {
-            playerNearby = true;
-        }
-        else
-        {
+            if (other.CompareTag("Player") && alien.GetComponent<LilithQuest3>().questAccepted == true)
+            {
+                playerNearby = true;
+            }
+            else
+            {
+
+            }
         }
     }
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && alien.GetComponent<LilithQuest3>().questAccepted == true)
+        if (alien.GetComponent<LilithQuest3>())
         {
-            playerNearby = false;
-        }
-        else
-        {
+            if (other.CompareTag("Player") && alien.GetComponent<LilithQuest3>().questAccepted == true)
+            {
+                playerNearby = false;
+            }
+            else
+            {
+            }
         }
     }
 }

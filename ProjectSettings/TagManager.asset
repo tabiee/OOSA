@@ -9,6 +9,7 @@ TagManager:
   - ObjectiveKnife
   - ObjectiveWater
   - ObjectivePlant
+  - talkedTo
   layers:
   - Default
   - TransparentFX
