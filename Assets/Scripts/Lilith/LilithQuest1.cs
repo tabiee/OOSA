@@ -11,7 +11,7 @@ public class LilithQuest1 : MonoBehaviour
     public TemplateText templateText;
     public TemplateText completionText;
 
-    private int panelLines;
+    public int panelLines;
     private bool questAccepted = false;
     private bool questCompleted = false;
 
@@ -50,6 +50,7 @@ public class LilithQuest1 : MonoBehaviour
     }
     void Randomizer()
     {
+        randomSound.volume = 0.2f;
         randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
         randomSound.Play();
     }
@@ -108,6 +109,7 @@ public class LilithQuest1 : MonoBehaviour
             if (questAccepted == false && questCompleted == false)
             {
                 Debug.Log("LilithQuest1 was accepted!");
+                gameObject.tag = "talkedTo";
                 questAccepted = true;
                 textBox.text = "";
                 //GetComponent<Quest>().Accept();

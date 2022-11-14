@@ -12,7 +12,7 @@ public class HarryQuest3 : MonoBehaviour
     public TemplateText templateText;
     public TemplateText completionText;
 
-    private int panelLines;
+    public int panelLines;
     public bool questAccepted = false;
     public bool questCompleted = false;
 
@@ -52,6 +52,7 @@ public class HarryQuest3 : MonoBehaviour
     }
     void Randomizer()
     {
+        randomSound.volume = 0.2f;
         randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
         randomSound.Play();
     }

@@ -10,6 +10,7 @@ public class SizeChanger : MonoBehaviour
     public Transform playerBody;
     public GameObject alien;
     public TMP_Text scaleText;
+    public Material sprite;
 
     public bool playerNearby;
 
@@ -44,6 +45,7 @@ public class SizeChanger : MonoBehaviour
         if (player.transform.localScale.y <= 0.5 && alien.GetComponent<LilithQuest2>() && triggerOnce == false)
         {
             triggerOnce = true;
+            alien.GetComponent<MeshRenderer>().material = sprite;
             alien.GetComponent<LilithQuest2>().CompleteQuest();
         }
     }

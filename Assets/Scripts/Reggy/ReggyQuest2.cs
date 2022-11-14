@@ -22,7 +22,7 @@ public class ReggyQuest2 : MonoBehaviour
     {
         textBox = GetComponentInChildren<TMP_Text>();
         var loadTemplateText = Resources.Load<TemplateText>("ScriptableObjects/Reggie2");
-        var loadCompletionText = Resources.Load<TemplateText>("ScriptableObjects/ReggyieDone");
+        var loadCompletionText = Resources.Load<TemplateText>("ScriptableObjects/Reggie2Done");
 
         randomSound = GetComponentInChildren<AudioSource>();
         var loadAudioSources = Resources.LoadAll<AudioClip>("Audio/Reggy/");
@@ -50,6 +50,7 @@ public class ReggyQuest2 : MonoBehaviour
     }
     void Randomizer()
     {
+        randomSound.volume = 0.2f;
         randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
         randomSound.Play();
     }

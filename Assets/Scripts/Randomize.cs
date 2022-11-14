@@ -20,6 +20,7 @@ public class Randomize : MonoBehaviour
     }
     void Randomizer()
     {
+        randomSound.volume = 0.1f;
         randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
         randomSound.Play();
     }
